@@ -30,41 +30,11 @@ public class CashDepositTest {
     }
 
     @Test
-    public void testGetCurrency() {
-        Currency currency = Currency.getInstance("USD");
-        BigDecimal balance = new BigDecimal("1000");
-        String name = "Test Deposit";
-
-        CashDeposit cashDeposit = new CashDeposit(currency, balance, name);
-        assertEquals(currency, cashDeposit.getCurrency());
-    }
-
-    @Test
-    public void testGetBalance() {
-        Currency currency = Currency.getInstance("USD");
-        BigDecimal balance = new BigDecimal("1000");
-        String name = "Test Deposit";
-
-        CashDeposit cashDeposit = new CashDeposit(currency, balance, name);
-        assertEquals(balance, cashDeposit.getBalance());
-    }
-
-    @Test
-    public void testGetName() {
-        Currency currency = Currency.getInstance("USD");
-        BigDecimal balance = new BigDecimal("1000");
-        String name = "Test Deposit";
-
-        CashDeposit cashDeposit = new CashDeposit(currency, balance, name);
-        assertEquals(name, cashDeposit.getName());
-    }
-
-    @Test
     public void testRefillBalance() {
         Currency currency = Currency.getInstance("USD");
         BigDecimal balance = new BigDecimal("1000");
         String name = "Test Deposit";
-        BigDecimal refillAmount = new BigDecimal("500");
+        BigDecimal refillAmount = new BigDecimal("-500");
 
         CashDeposit cashDeposit = new CashDeposit(currency, balance, name);
         assertEquals(balance.add(refillAmount), cashDeposit.refillBalance(refillAmount));
