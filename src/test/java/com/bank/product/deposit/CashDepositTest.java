@@ -30,7 +30,7 @@ public class CashDepositTest {
     }
 
     @Test
-    public void testRefillBalance_WithNegativeValue() {
+    public void testRefillBalance_WithNegativeAmount() {
         Currency currency = Currency.getInstance("USD");
         BigDecimal balance = new BigDecimal("1000");
         String name = "Test Deposit";
