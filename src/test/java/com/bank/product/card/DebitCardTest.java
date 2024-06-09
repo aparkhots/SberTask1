@@ -10,13 +10,13 @@ import static org.junit.Assert.*;
 public class DebitCardTest {
 
     @Test
-    public void testRefillBalance() {
+    public void testRefillBalance_WithZeroAmount() {
         BigDecimal balance = new BigDecimal("1000");
         String name = "Test Card";
-        BigDecimal refillAmount = new BigDecimal("500");
+        BigDecimal refillAmount = new BigDecimal("0");
 
         DebitCard debitCard = new DebitCard(balance, name);
-        assertEquals(balance.add(refillAmount), debitCard.refillBalance(refillAmount));
+        assertEquals(balance, debitCard.refillBalance(refillAmount));
     }
 
 }

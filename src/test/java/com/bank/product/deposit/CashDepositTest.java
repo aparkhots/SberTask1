@@ -30,13 +30,13 @@ public class CashDepositTest {
     }
 
     @Test
-    public void testRefillBalance() {
+    public void testRefillBalance_WithNegativeValue() {
         Currency currency = Currency.getInstance("USD");
         BigDecimal balance = new BigDecimal("1000");
         String name = "Test Deposit";
         BigDecimal refillAmount = new BigDecimal("-500");
 
         CashDeposit cashDeposit = new CashDeposit(currency, balance, name);
-        assertEquals(balance.add(refillAmount), cashDeposit.refillBalance(refillAmount));
+        assertEquals(balance, cashDeposit.refillBalance(refillAmount));
     }
 }

@@ -20,4 +20,9 @@ public class CurrencyDebitCardTest {
         assertEquals(balance.add(refillAmount), debitCard.refillBalance(refillAmount));
     }
 
+    @Test
+    public void testGetCurrencyInstance_InvalidCode() {
+        String invalidCurrencyCode = "III";
+        assertThrows(IllegalArgumentException.class, () -> Currency.getInstance(invalidCurrencyCode));
+    }
 }

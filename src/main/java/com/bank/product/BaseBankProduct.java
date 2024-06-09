@@ -27,6 +27,10 @@ public abstract class BaseBankProduct {
     }
 
     public BigDecimal refillBalance(BigDecimal amount) {
+        if (amount.compareTo(BigDecimal.ZERO) <= 0) {
+            return this.balance;
+        }
         return this.balance.add(amount);
+
     }
 }
