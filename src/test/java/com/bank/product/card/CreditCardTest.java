@@ -1,7 +1,5 @@
 package com.bank.product.card;
 
-import com.bank.product.deposit.CashDeposit;
-import org.junit.Assert;
 import org.junit.Test;
 
 import java.math.BigDecimal;
@@ -37,7 +35,7 @@ public class CreditCardTest {
     public void testRefillBalance() {
         Currency currency = Currency.getInstance("USD");
         BigDecimal balance = new BigDecimal("1000");
-        String name = "Test Deposit";
+        String name = "Test Card";
         BigDecimal refillAmount = new BigDecimal("500");
         double interestRate = 0.05;
 

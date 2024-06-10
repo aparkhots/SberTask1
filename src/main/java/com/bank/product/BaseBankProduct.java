@@ -31,6 +31,5 @@ public abstract class BaseBankProduct {
             return this.balance;
         }
         return this.balance.add(amount);
-
     }
 }
